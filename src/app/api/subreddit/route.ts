@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     })
 
     if (subredditExists) {
-      return new Response('Subreddit already exists', { status: 409 })
+      return new Response('Community already exists', { status: 409 })
     }
 
     const subreddit = await db.subreddit.create({
@@ -45,6 +45,6 @@ export async function POST(req: Request) {
       return new Response(error.message, { status: 422 })
     }
 
-    return new Response('Could not create subreddit', { status: 500 })
+    return new Response('Could not create community', { status: 500 })
   }
 }
