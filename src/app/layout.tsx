@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import Navbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/Toaster'
+import Providers from '@/components/Providers'
 
 export const metadata = {
   title: 'Okapi',
@@ -26,6 +27,7 @@ export default function RootLayout({
       inter.className
       )}>
       <body className='min-h-screen p-12 bg-slate-50 antialiased'>
+        <Providers>
         {/* @ts-expect-error server component */}
         <Navbar />
         {authModal}
@@ -33,6 +35,7 @@ export default function RootLayout({
         <div className='container max-w-7xl mx-auto h-full pt-12'>
           {children}
         </div>
+        </Providers>
         <Toaster />
       </body>
     </html>
