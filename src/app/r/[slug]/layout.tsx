@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
+import Link from "next/link";
 
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
+import { buttonVariants } from "@/components/ui/Button";
 
 const Layout = async ({
   children,
@@ -86,15 +88,23 @@ const Layout = async ({
                 <div className="flex justify-between gap-x-4 py-3">
                   <p className="text-gray-500">You created this community</p>
                 </div>
-              ): null}
+              ) : null}
 
               {subreddit.creatorId !== session?.user.id ? (
-                <SubscribeLeaveToggle 
-                  subredditId={subreddit.id} 
-                  subredditName={subreddit.name} 
-                  isSubscribed={isSubscribed}  
+                <SubscribeLeaveToggle
+                  subredditId={subreddit.id}
+                  subredditName={subreddit.name}
+                  isSubscribed={isSubscribed}
                 />
-              ): null}
+              ) : null}
+
+              <Link className={buttonVariants({
+                variant: 'outline',
+                className: 'w-full mb-6'
+              })}
+                href={`r/${slug}/submit`}>
+                Create Post
+              </Link>
             </dl>
           </div>
         </div>
