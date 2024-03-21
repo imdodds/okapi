@@ -31,7 +31,7 @@ const CreateComment: FC<CreateCommentProps> = ({ postId, replyToId }) => {
         replyToId,
       }
 
-      const { data } = await axios.patch(`/api/subreddit/post/comment`, payload)
+      const { data } = await axios.patch(`/api/subreddit/post/comment/`, payload)
       return data
     },
 
@@ -67,9 +67,9 @@ const CreateComment: FC<CreateCommentProps> = ({ postId, replyToId }) => {
           placeholder="What are your thoughts?"
         />
         <div className="mt-2 flex justify-end">
-          <Button 
-            isLoading={isLoading} 
-            disabled={input.length === 0} 
+          <Button
+            isLoading={isLoading}
+            disabled={input.length === 0}
             onClick={() => comment({ postId, text: input, replyToId })}>
             Post
           </Button>
