@@ -8,19 +8,19 @@ import PostVoteClient from "./post-vote/PostVoteClient";
 type PartialVote = Pick<Vote, 'type'>
 
 interface PostProps {
-  subredditName: string
   post: Post & {
     author: User
     votes: Vote[]
   }
+  subredditName: string
   commentAmt: number
   votesAmt: number
   currentVote?: PartialVote
 }
 
 const Post: FC<PostProps> = ({
-  subredditName,
   post,
+  subredditName,
   commentAmt,
   votesAmt: votesAmt,
   currentVote,
@@ -64,7 +64,9 @@ const Post: FC<PostProps> = ({
             <EditorOutput content={post.content} />
 
             {pRef.current?.clientHeight === 160 ? (
-              <div className="absolute botom-0 left-0 h-24 w-full bg-gradient-to-t from-white to-transparent" />
+              <div
+                className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white to-transparent">
+              </div>
             ) : null}
           </div>
         </div>

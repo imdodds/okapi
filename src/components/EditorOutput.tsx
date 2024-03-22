@@ -22,12 +22,11 @@ const style = {
 
 const renderers = {
   image: CustomImageRenderer,
-  // code: CustomCodeRenderer,
+  code: CustomCodeRenderer,
 }
 
 const EditorOutput: FC<EditorOutputProps> = ({ content }) => {
   return (
-    // @ts-expect-error
     <Output
       data={content}
       style={style}
