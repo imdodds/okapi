@@ -55,12 +55,11 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
       return toast({
         title: 'Subscribed',
         description: `You are now subscribed to r/${subredditName}`,
-        variant: 'success'
+        variant: 'default'
       })
     }
   })
 
-  //-------------------------------------------------------------------------
 
   const { mutate: unsubscribe, isLoading: isUnsubLoading } = useMutation({
     mutationFn: async () => {
@@ -92,12 +91,11 @@ const SubscribeLeaveToggle: FC<SubscribeLeaveToggleProps> = ({
       return toast({
         title: 'Unsubscribed',
         description: `You are now unsubscribed from r/${subredditName}`,
-        variant: 'success'
+        variant: 'default'
       })
     }
   })
 
-  //-------------------------------------------------------------------------
 
   return isSubscribed ? (
     <Button
