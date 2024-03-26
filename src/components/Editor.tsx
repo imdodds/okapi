@@ -63,7 +63,7 @@ const Editor: FC<EditorProps> = ({ subredditId }) => {
           linktool: {
             class: LinkTool,
             config: {
-              endpoint: 'api/link',
+              endpoint: '/api/link',
             },
           },
           image: {

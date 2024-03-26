@@ -23,7 +23,7 @@ export async function GET(req: Request) {
 
   return new Response(
     JSON.stringify({
-      succes: 1,
+      success: 1,
       meta: {
         title,
         description,
