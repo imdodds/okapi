@@ -24,6 +24,8 @@ const Navbar = async () => {
         {/* search bar */}
         <SearchBar />
 
+
+
         {session?.user ? (
           <UserAccountNav user={session.user} />
         ) : (
@@ -31,6 +33,16 @@ const Navbar = async () => {
             Sign In
           </Link>
         )}
+      </div>
+
+      {/* links */}
+      <div className="container max-w-4xl mx-auto flex items-center justify-between gap-2 mt-2">
+        <Link href="/r/art" className="text-zinc-500 text-sm">art</Link>
+        <Link href="/r/games" className="text-zinc-500 text-sm">games</Link>
+        <Link href="/r/music" className="text-zinc-500 text-sm">music</Link>
+        <Link href="/r/news" className="text-zinc-500 text-sm">news</Link>
+        <Link href="/r/science" className="text-zinc-500 text-sm">science</Link>
+        <Link href="/r/stonks" className="text-zinc-500 text-sm">stonks</Link>
       </div>
     </div>
   )
