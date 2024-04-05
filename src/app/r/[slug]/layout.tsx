@@ -7,6 +7,8 @@ import { db } from "@/lib/db";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
 import { buttonVariants } from "@/components/ui/Button";
 import BackButton from "@/components/BackButton";
+import Interactive from "@/components/Interactive";
+
 
 const Layout = async ({
   children,
@@ -106,6 +108,9 @@ const Layout = async ({
                 href={`r/${slug}/submit`}>
                 Create Post
               </Link>
+
+              <Interactive subredditName={subreddit.name} />
+
             </dl>
           </div>
         </div>
