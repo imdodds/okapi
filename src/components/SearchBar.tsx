@@ -45,7 +45,7 @@ const SearchBar: FC<SearchBarProps> = ({ }) => {
   })
 
   const request = debounce(async () => {
-   refetch()
+    refetch()
   }, 300)
 
   const debounceRequest = useCallback(() => {
@@ -66,26 +66,26 @@ const SearchBar: FC<SearchBarProps> = ({ }) => {
         placeholder="Search communities..."
       />
 
-        {input.length > 0 ? (
-          <CommandList className="absolute bg-white top-full inset-x-0 shadow rounded-b-md">
-            {isFetched && <CommandEmpty>No results found</CommandEmpty>}
-            {(queryResults?.length ?? 0) > 0 ? (
-              <CommandGroup heading="Communities">
-                {queryResults?.map((subreddit) => (
-                  <CommandItem onSelect={(event) => {
-                    router.push(`/r/${event}`)
-                    router.refresh()
-                  }}
+      {input.length > 0 ? (
+        <CommandList className="absolute bg-white top-full inset-x-0 shadow rounded-b-md">
+          {isFetched && <CommandEmpty>No results found</CommandEmpty>}
+          {(queryResults?.length ?? 0) > 0 ? (
+            <CommandGroup heading="Communities">
+              {queryResults?.map((subreddit) => (
+                <CommandItem onSelect={(event) => {
+                  router.push(`/r/${event}`)
+                  router.refresh()
+                }}
                   key={subreddit.id}
                   value={subreddit.name}>
-                    <Users className="mr-2 h-4 w-4" />
-                    <a href={`/r/${subreddit.name}`}>r/{subreddit.name}</a>
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            ) : null}
-          </CommandList>
-        ) : null}
+                  <Users className="mr-2 h-4 w-4" />
+                  <a href={`/r/${subreddit.name}`}>r/{subreddit.name}</a>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          ) : null}
+        </CommandList>
+      ) : null}
     </Command>
   );
 };
