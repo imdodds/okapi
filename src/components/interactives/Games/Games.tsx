@@ -1,9 +1,10 @@
 import React from 'react'
+import BreakoutGame from './BreakoutGame'
 
 const Games = () => {
   return (
-    <div>
-      This is the Games component
+    <div className='mt-4'>
+      <BreakoutGame />
     </div>
   )
 }
