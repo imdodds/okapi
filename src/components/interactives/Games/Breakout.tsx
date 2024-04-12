@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 
-const BreakoutGame: React.FC = () => {
+const Breakout: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [ballPosition, setBallPosition] = useState({ x: 125, y: 125 });
   const [ballVelocity, setBallVelocity] = useState({ x: 1, y: 1 });
@@ -10,6 +10,7 @@ const BreakoutGame: React.FC = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasWon, setHasWon] = useState(false);
   const [bricks, setBricks] = useState<number[][]>([]);
   const [bricksInitialized, setBricksInitialized] = useState(false);
   const animationRef = useRef<number>();
@@ -36,10 +37,6 @@ const BreakoutGame: React.FC = () => {
       }
     }
     return bricksArray;
-  };
-
-  const hasWon = (): boolean => {
-    return bricks.every((row) => row.every((brick) => brick === 0));
   };
 
   useEffect(() => {
@@ -173,7 +170,8 @@ const BreakoutGame: React.FC = () => {
       }
 
       // Check if the player has won
-      if (hasWon()) {
+      if (!gameOver && isPlaying && !hasWon && bricks.every((row) => row.every((brick) => brick === 0))) {
+        setHasWon(true);
         setIsPlaying(false);
         // Display 'You win!' message
         ctx.font = '24px Arial';
@@ -212,6 +210,7 @@ const BreakoutGame: React.FC = () => {
   const startGame = () => {
     setIsPlaying(true);
     setGameOver(false);
+    setHasWon(false);
     setBallPosition({ x: paddlePosition, y: canvasHeight - paddleHeight });
     setBallVelocity({ x: 1, y: -1 });
     setScore(0);
@@ -251,4 +250,4 @@ const BreakoutGame: React.FC = () => {
   );
 };
 
-export default BreakoutGame;
+export default Breakout;

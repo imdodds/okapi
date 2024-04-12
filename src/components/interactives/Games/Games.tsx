@@ -1,10 +1,10 @@
 import React from 'react'
-import BreakoutGame from './BreakoutGame'
+import Breakout from './Breakout'
 
 const Games = () => {
   return (
     <div className='mt-4'>
-      <BreakoutGame />
+      <Breakout />
     </div>
   )
 }
