@@ -4,7 +4,7 @@ import Art from "./interactives/Art";
 import Music from "./interactives/Music";
 import News from "./interactives/News";
 import Science from "./interactives/Science";
-import Stonks from "./interactives/Stonks";
+import Stonks from "./interactives/Stonks/Stonks";
 
 interface InteractiveProps {
   subredditName: string
