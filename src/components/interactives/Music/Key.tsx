@@ -6,14 +6,16 @@ import * as Tone from "tone";
 interface KeyProps {
   note: string;
   octave: number;
-  waveType: string;
 }
 
 type KeyToNote = {
   [key: string]: string;
 };
 
-const Key = ({ note, octave, waveType }: KeyProps) => {
+const Key = ({ note, octave }: KeyProps) => {
+
+  const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+  const isSharp = note.includes('#');
 
   const [pressedKeys, setPressedKeys] = useState<{ [key: string]: boolean }>(() => {
     const initialPressedKeys: { [key: string]: boolean } = {};
@@ -41,13 +43,6 @@ const Key = ({ note, octave, waveType }: KeyProps) => {
     });
     return initialPressedKeys;
   });
-
-  const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-  synth.set({
-    oscillator: { type: waveType },
-  });
-
-  const isSharp = note.includes('#');
 
   const KEY_TO_NOTE: KeyToNote = {
     'a': `C${octave}`,
