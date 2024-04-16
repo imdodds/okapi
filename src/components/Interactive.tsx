@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Games from "./interactives/Games/Games";
 import Art from "./interactives/Art";
-import Music from "./interactives/Music";
+import Music from "./interactives/Music/Music";
 import News from "./interactives/News";
 import Science from "./interactives/Science";
 import Stonks from "./interactives/Stonks/Stonks";
