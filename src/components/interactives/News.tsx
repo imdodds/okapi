@@ -3,7 +3,11 @@ import React from 'react'
 const News = () => {
   return (
     <div>
-      This is the News component
+      <iframe
+        width="300"
+        height="700"
+        src="https://rss.app/embed/v1/feed/2ESHyASlHgPIHCxl">
+      </iframe>
     </div>
   )
 }
