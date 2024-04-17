@@ -1,6 +1,8 @@
 import { FC } from "react";
-import Games from "./interactives/Games/Games";
+
 import Art from "./interactives/Art";
+import Games from "./interactives/Games/Games";
+import Lol from "./interactives/Lol";
 import Music from "./interactives/Music/Music";
 import News from "./interactives/News";
 import Science from "./interactives/Science";
@@ -18,6 +20,8 @@ const Interactive: FC<InteractiveProps> = ({ subredditName }) => {
         return <Art />;
       case "games":
         return <Games />;
+      case "lol":
+        return <Lol />;
       case "music":
         return <Music />;
       case "news":

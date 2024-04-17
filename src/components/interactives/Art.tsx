@@ -3,7 +3,7 @@ import React from 'react'
 const Art = () => {
   return (
     <div>
-      This is the Art component
+      {/* This is the Art component */}
     </div>
   )
 }
