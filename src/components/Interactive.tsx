@@ -7,7 +7,6 @@ import Music from "./interactives/Music/Music";
 import News from "./interactives/News";
 import Science from "./interactives/Science";
 import Stonks from "./interactives/Stonks/Stonks";
-import Lol from "./interactives/Lol";
 
 interface InteractiveProps {
   subredditName: string
