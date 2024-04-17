@@ -5,6 +5,7 @@ import Music from "./interactives/Music/Music";
 import News from "./interactives/News";
 import Science from "./interactives/Science";
 import Stonks from "./interactives/Stonks/Stonks";
+import Lol from "./interactives/Lol";
 
 interface InteractiveProps {
   subredditName: string
@@ -18,6 +19,8 @@ const Interactive: FC<InteractiveProps> = ({ subredditName }) => {
         return <Art />;
       case "games":
         return <Games />;
+      case "lol":
+        return <Lol />;
       case "music":
         return <Music />;
       case "news":
