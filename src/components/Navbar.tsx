@@ -35,6 +35,7 @@ const Navbar = async () => {
           <Link href="/r/photos" className="text-zinc-500 text-sm">photos</Link>
           <Link href="/r/science" className="text-zinc-500 text-sm">science</Link>
           <Link href="/r/stonks" className="text-zinc-500 text-sm">stonks</Link>
+          <Link href="/r/etc" className="text-zinc-500 text-sm">etc</Link>
         </div>
 
         {session?.user ? (
